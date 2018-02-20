@@ -63,4 +63,24 @@ public class DBHelper extends SQLiteOpenHelper{
 
 
     }
+    public boolean updateData(String ID,String title, String hours, String min, String meridian){
+        SQLiteDatabase db= this.getWritableDatabase();
+        ContentValues contentValues= new ContentValues();
+        contentValues.put(COL_1,ID);
+        contentValues.put(COL_2,title);
+        contentValues.put(COL_3,hours);
+        contentValues.put(COL_4,min);
+        contentValues.put(COL_5,meridian);
+
+        db.update(TABLE_NAME,contentValues,"ID = ?",new String[]{ID});
+        return true;
+
+    }
+    public Integer deleteData(String ID){
+        SQLiteDatabase db= this.getWritableDatabase();
+        return db.delete(TABLE_NAME,"ID= ?",new String[] {ID});
+
+
+
+    }
 }

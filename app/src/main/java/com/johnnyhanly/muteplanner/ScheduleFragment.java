@@ -21,25 +21,29 @@ public class ScheduleFragment extends Fragment {
     DBHelper myDB;
     Button bViewData;
     Button bAddData;
+    Button bUpdateData;
+    Button bDeleteData;
     FloatingActionButton mAdd;
-    EditText editTitle, editHour, editMinute, editMeridian;
+    EditText editTitle, editHour, editMinute, editMeridian, editID;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_schedule, container, false);
 
         bViewData = (Button) view.findViewById(R.id.showData);
-
+        editID= (EditText) view.findViewById(R.id.editID);
         editTitle = (EditText) view.findViewById(R.id.editTitle);
         editHour = (EditText) view.findViewById(R.id.editHour);
         editMinute = (EditText) view.findViewById(R.id.editMinute);
         editMeridian = (EditText) view.findViewById(R.id.editMeridian);
         bAddData = (Button) view.findViewById(R.id.addData);
+        bUpdateData= (Button)view.findViewById(R.id.updateData);
+        bDeleteData= (Button)view.findViewById(R.id.deleteData);
         myDB = new DBHelper(getActivity());
 
         AddData();
         ViewData();
-
-
+        UpdateData();
+        DeleteData();
         return view;
     }
 
@@ -59,7 +63,6 @@ public class ScheduleFragment extends Fragment {
             }
         });
     }
-
 
     public void ViewData() {
         bViewData.setOnClickListener(new View.OnClickListener() {
@@ -93,6 +96,33 @@ public class ScheduleFragment extends Fragment {
             }
         });
 
+    }
+    public void UpdateData(){
+bUpdateData.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        boolean isUpdated= myDB.updateData(editID.getText().toString(),editTitle.getText().toString(),
+                editHour.getText().toString(),editMinute.getText().toString(), editMeridian.getText().toString());
+        if (isUpdated = true) {
+            Toast.makeText(getActivity(), "Data Updated", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(getActivity(), "Data not Updated", Toast.LENGTH_SHORT).show();
+        }
+    }
+});
 
+    }
+    public void DeleteData(){
+        bDeleteData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Integer deletedRows= myDB.deleteData(editID.getText().toString());
+                if (deletedRows >0){
+                    Toast.makeText(getActivity(), "Data Deleted", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getActivity(), "Data not Deleted", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 }

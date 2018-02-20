@@ -47,13 +47,22 @@
 
     <EditText
         android:id="@+id/editMeridian"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/editTitle"
+        android:layout_marginTop="241dp"
         android:hint="Enter meridian"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/editID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/editTitle"
-        android:layout_centerVertical="true"
+        android:layout_below="@+id/editMeridian"
+        android:hint="Enter ID"
         android:inputType="text" />
-
     <Button
         android:id="@+id/addData"
         android:layout_width="wrap_content"
@@ -74,4 +83,26 @@
         android:text="show DATA"
         android:visibility="visible"
         tools:text="show DATA" />
+
+    <Button
+        android:id="@+id/updateData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/addData"
+        android:layout_marginTop="-143dp"
+        android:layout_toEndOf="@+id/addData"
+        android:text="update DATA"
+        android:visibility="visible"
+        tools:text="update DATA" />
+    <Button
+        android:id="@+id/deleteData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/addData"
+        android:layout_marginStart="83dp"
+        android:layout_marginTop="-143dp"
+        android:text="delete DATA"
+        android:visibility="visible"
+        tools:text="delete DATA" />
 </RelativeLayout>
