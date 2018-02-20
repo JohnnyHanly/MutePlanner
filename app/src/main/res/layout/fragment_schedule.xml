@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ScheduleFragment">
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/addButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="13dp">
+
+    </android.support.design.widget.FloatingActionButton>
+
+    <EditText
+        android:id="@+id/editTitle"
+        android:hint="Enter your title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="102dp"
+        android:layout_marginTop="87dp"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/editHour"
+        android:hint="Enter your hour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/editTitle"
+        android:layout_below="@+id/editTitle"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/editMinute"
+        android:layout_width="wrap_content"
+        android:hint="Enter your minute"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/editTitle"
+        android:layout_marginTop="188dp"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/editMeridian"
+        android:hint="Enter meridian"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/editTitle"
+        android:layout_centerVertical="true"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/addData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/editTitle"
+        android:layout_marginBottom="143dp"
+        tools:text="ADD DATA" />
+
+    <Button
+        android:id="@+id/showData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/addData"
+        android:layout_toEndOf="@+id/addData"
+        tools:text="show DATA" />
+</RelativeLayout>

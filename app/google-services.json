@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "501127711000",
+    "firebase_url": "https://mute-planner.firebaseio.com",
+    "project_id": "mute-planner",
+    "storage_bucket": "mute-planner.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:501127711000:android:a1057b03ee2867c9",
+        "android_client_info": {
+          "package_name": "com.johnnyhanly.muteplanner"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "501127711000-4k8ackijmkam4fljt3tdq146ki9mkgc1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbOHT9c9NNdddbbKs5fjL8x9JEbYvMMwA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
