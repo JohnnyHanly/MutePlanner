@@ -61,6 +61,8 @@
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/editTitle"
         android:layout_marginBottom="143dp"
+        android:text="ADD DATA"
+        android:visibility="visible"
         tools:text="ADD DATA" />
 
     <Button
@@ -69,5 +71,7 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/addData"
         android:layout_toEndOf="@+id/addData"
+        android:text="show DATA"
+        android:visibility="visible"
         tools:text="show DATA" />
 </RelativeLayout>
