@@ -31,23 +31,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         tabLayout.addTab(tabLayout.newTab().setText("Schedule"));
         tabLayout.addTab(tabLayout.newTab().setText("Locations"));
         final ViewPager viewPager= findViewById(R.id.viewpager);

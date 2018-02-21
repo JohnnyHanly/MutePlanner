@@ -1,24 +1,27 @@
 package com.johnnyhanly.muteplanner;
 
-import android.app.AlertDialog;
-import android.content.Context;
-import android.database.Cursor;
-import android.net.Uri;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 
 public class ScheduleFragment extends Fragment {
     View view;
     DBHelper myDB;
+    ListView alarmList;
     Button bViewData;
     Button bAddData;
     Button bUpdateData;
@@ -28,27 +31,77 @@ public class ScheduleFragment extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_schedule, container, false);
-
+/*
         bViewData = (Button) view.findViewById(R.id.showData);
         editID= (EditText) view.findViewById(R.id.editID);
         editTitle = (EditText) view.findViewById(R.id.editTitle);
         editHour = (EditText) view.findViewById(R.id.editHour);
         editMinute = (EditText) view.findViewById(R.id.editMinute);
         editMeridian = (EditText) view.findViewById(R.id.editMeridian);
+
         bAddData = (Button) view.findViewById(R.id.addData);
         bUpdateData= (Button)view.findViewById(R.id.updateData);
         bDeleteData= (Button)view.findViewById(R.id.deleteData);
+*/ alarmList=(ListView)view.findViewById(R.id.list_of_alarms);
         myDB = new DBHelper(getActivity());
+        String[] fruits = new String[] {
+                "Cape Gooseberry",
+                "Capuli cherry"
+        };
+        final List<String> fruits_list= new ArrayList<String>(Arrays.asList(fruits)
+        );
+        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>
+                (getActivity(),android.R.layout.simple_list_item_1, fruits_list);
 
+       alarmList.setAdapter(arrayAdapter);
+
+        alarmList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if ((position == 0)) {
+                    Intent i= new Intent(getActivity(), AlarmSelectActivity.class);
+                    startActivity(i);
+
+                }
+            }
+        });
+/*
         AddData();
         ViewData();
         UpdateData();
         DeleteData();
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         return view;
     }
 
-    public void AddData() {
 
+/*
+    public void AddData() {
         bAddData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -125,4 +178,5 @@ bUpdateData.setOnClickListener(new View.OnClickListener() {
             }
         });
     }
+    */
 }

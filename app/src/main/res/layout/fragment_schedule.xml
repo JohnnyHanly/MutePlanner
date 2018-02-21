@@ -5,6 +5,20 @@
     android:layout_height="match_parent"
     tools:context=".ScheduleFragment">
 
+    <ListView
+        android:id="@+id/list_of_alarms"
+        android:layout_below="@+id/tablayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:dividerHeight="1dp"
+        android:footerDividersEnabled="true"
+        android:transcriptMode="alwaysScroll">
+
+
+    </ListView>
+
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/addButton"
         android:layout_width="wrap_content"
@@ -15,94 +29,5 @@
 
     </android.support.design.widget.FloatingActionButton>
 
-    <EditText
-        android:id="@+id/editTitle"
-        android:hint="Enter your title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="102dp"
-        android:layout_marginTop="87dp"
-        android:inputType="text" />
 
-    <EditText
-        android:id="@+id/editHour"
-        android:hint="Enter your hour"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/editTitle"
-        android:layout_below="@+id/editTitle"
-        android:inputType="text" />
-
-    <EditText
-        android:id="@+id/editMinute"
-        android:layout_width="wrap_content"
-        android:hint="Enter your minute"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/editTitle"
-        android:layout_marginTop="188dp"
-        android:inputType="text" />
-
-    <EditText
-        android:id="@+id/editMeridian"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/editTitle"
-        android:layout_marginTop="241dp"
-        android:hint="Enter meridian"
-        android:inputType="text" />
-
-    <EditText
-        android:id="@+id/editID"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/editTitle"
-        android:layout_below="@+id/editMeridian"
-        android:hint="Enter ID"
-        android:inputType="text" />
-    <Button
-        android:id="@+id/addData"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/editTitle"
-        android:layout_marginBottom="143dp"
-        android:text="ADD DATA"
-        android:visibility="visible"
-        tools:text="ADD DATA" />
-
-    <Button
-        android:id="@+id/showData"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/addData"
-        android:layout_toEndOf="@+id/addData"
-        android:text="show DATA"
-        android:visibility="visible"
-        tools:text="show DATA" />
-
-    <Button
-        android:id="@+id/updateData"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/addData"
-        android:layout_marginTop="-143dp"
-        android:layout_toEndOf="@+id/addData"
-        android:text="update DATA"
-        android:visibility="visible"
-        tools:text="update DATA" />
-    <Button
-        android:id="@+id/deleteData"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/addData"
-        android:layout_marginStart="83dp"
-        android:layout_marginTop="-143dp"
-        android:text="delete DATA"
-        android:visibility="visible"
-        tools:text="delete DATA" />
 </RelativeLayout>
