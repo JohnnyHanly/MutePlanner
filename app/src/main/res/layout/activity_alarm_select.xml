@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AlarmSelectActivity">
+
+    <EditText
+        android:id="@+id/enterTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:hint="Enter the title of the alarm"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TimePicker
+        android:id="@+id/timePicker1"
+        android:layout_width="279dp"
+        android:layout_height="126dp"
+        android:timePickerMode="spinner"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.251"></TimePicker>
+
+    <TimePicker
+        android:id="@+id/timePicker2"
+        android:layout_width="279dp"
+        android:layout_height="126dp"
+        android:timePickerMode="spinner"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.537"></TimePicker>
+
+    <Button
+        android:id="@+id/saveAlarm"
+        android:layout_width="87dp"
+        android:layout_height="44dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:backgroundTint="@android:color/holo_green_light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/cancelAlarm"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/daysofweek"
+        app:layout_constraintVertical_bias="0.36"
+        tools:text="Save" />
+
+    <Button
+        android:id="@+id/cancelAlarm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/holo_red_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/saveAlarm"
+        app:layout_constraintTop_toBottomOf="@+id/daysofweek"
+        app:layout_constraintVertical_bias="0.373"
+        tools:text="Cancel" />
+
+    <RadioGroup
+        android:id="@+id/daysofweek"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enterTitle"
+        app:layout_constraintVertical_bias="0.644">
+
+
+        <CheckBox
+            android:id="@+id/sundayButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="DayChecker"
+            android:layout_weight="1"
+            android:text="S" />
+
+
+        <CheckBox
+            android:id="@+id/mondayButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="DayChecker"
+            android:layout_weight="1"
+            android:text="M" />
+
+
+        <CheckBox
+            android:id="@+id/tuesdayButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="DayChecker"
+            android:layout_weight="1"
+            android:text="T" />
+
+
+        <CheckBox
+            android:id="@+id/wednesdayButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="DayChecker"
+            android:layout_weight="1"
+            android:text="W" />
+
+        <CheckBox
+            android:id="@+id/thursdayButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="DayChecker"
+            android:layout_weight="1"
+            android:text="Th" />
+
+        <CheckBox
+            android:id="@+id/fridayButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="DayChecker"
+            android:layout_weight="1"
+            android:text="F" />
+
+        <CheckBox
+            android:id="@+id/saturdayButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="DayChecker"
+            android:layout_weight="1"
+            android:text="S" />
+
+
+    </RadioGroup>
+
+</android.support.constraint.ConstraintLayout>

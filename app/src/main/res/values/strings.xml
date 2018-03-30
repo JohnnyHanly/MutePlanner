@@ -3,4 +3,16 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_my_list_view_with_toggle">MyListViewWithToggle</string>
+    <string name="On_Off">ON/OFF</string>
+    <string-array name="Strings">
+    <item >Android Desk</item>
+    <item >Android Desk by Deepthi.G</item>
+    <item >ListView in android</item>
+    <item >Android Tutorials</item>
+
+    </string-array>
+
 </resources>

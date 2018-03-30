@@ -10,8 +10,10 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -20,7 +22,7 @@ import java.util.List;
 
 public class ScheduleFragment extends Fragment {
     View view;
-    DBHelper myDB;
+    //DBHelper myDB;
     ListView alarmList;
     Button bViewData;
     Button bAddData;
@@ -31,6 +33,7 @@ public class ScheduleFragment extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_schedule, container, false);
+        mAdd = (FloatingActionButton) view.findViewById(R.id.addButton);
 /*
         bViewData = (Button) view.findViewById(R.id.showData);
         editID= (EditText) view.findViewById(R.id.editID);
@@ -42,29 +45,47 @@ public class ScheduleFragment extends Fragment {
         bAddData = (Button) view.findViewById(R.id.addData);
         bUpdateData= (Button)view.findViewById(R.id.updateData);
         bDeleteData= (Button)view.findViewById(R.id.deleteData);
-*/ alarmList=(ListView)view.findViewById(R.id.list_of_alarms);
-        myDB = new DBHelper(getActivity());
-        String[] fruits = new String[] {
+
+
+*/
+        alarmList = (ListView) view.findViewById(R.id.list_of_alarms);
+        //myDB = new DBHelper(getActivity());
+        String[] fruits = new String[]{
                 "Cape Gooseberry",
                 "Capuli cherry"
         };
-        final List<String> fruits_list= new ArrayList<String>(Arrays.asList(fruits)
+        final List<String> fruits_list = new ArrayList<String>(Arrays.asList(fruits)
         );
         final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>
-                (getActivity(),android.R.layout.simple_list_item_1, fruits_list);
+                (getActivity(), android.R.layout.simple_list_item_1, fruits_list);
 
-       alarmList.setAdapter(arrayAdapter);
+        alarmList.setAdapter(arrayAdapter);
 
         alarmList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if ((position == 0)) {
-                    Intent i= new Intent(getActivity(), AlarmSelectActivity.class);
+                    Intent i = new Intent(getActivity(), AlarmSelectActivity.class);
                     startActivity(i);
 
                 }
             }
         });
+
+        mAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(), AlarmSelectActivity.class);
+                startActivity(i);
+            }
+        });
+
+
+
+
+
+
+
 /*
         AddData();
         ViewData();
@@ -74,30 +95,9 @@ public class ScheduleFragment extends Fragment {
 */
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         return view;
     }
+
 
 
 /*
@@ -179,4 +179,5 @@ bUpdateData.setOnClickListener(new View.OnClickListener() {
         });
     }
     */
-}
+    }
+
